@@ -1,0 +1,64 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_files:
+     - vars/main.yml
+  roles:
+     - { role: geerlingguy.homebrew }
+
+  tasks:
+
+     # Ansible setup
+     - name: Ensure Ansible downloads directory exists
+       file: path={{ item }} state=directory
+       with_items:
+          - ~/bin/
+          - ~/proj
+          - "{{ downloads }}"
+
+     - name: Check oh-my-zsh installed
+       stat: path=~/.oh-my-zsh
+       register: oh_my_zsh_dir
+
+     - name: Install oh-my-zsh
+       shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+       when: oh_my_zsh_dir.stat.exists == false
+
+     - name: Clone dotfiles
+       git: repo={{ dotfiles_repo }}
+            dest={{ dotfiles_repo_local_destination }}
+
+     - name: Link dotfiles
+       file: path=~/{{ item }} src={{ dotfiles_repo_local_destination }}/{{ item }} state=link
+       with_items: "{{ dotfiles_files }}"
+       
+     - name: Install spacemacs
+       git: repo=https://github.com/syl20bnr/spacemacs
+            dest=~/.emacs.d
+
+     - name: Install pyenv
+       shell: curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+       args:
+        creates: ~/.pyenv/bin/pyenv
+
+     - name: Add pyenv to Path
+       lineinfile: dest=~/.zshrc regexp='\$HOME/.pyenv/bin' line='export PATH="$HOME/.pyenv/bin:$PATH"'
+
+     - name: Install Python 3.5
+       command: ~/.pyenv/bin/pyenv install 3.5.0 creates=~/.pyenv/versions/3.5.0/bin/python
+
+     - name: Install Python 3.4.3
+       command: ~/.pyenv/bin/pyenv install 3.4.3 creates=~/.pyenv/versions/3.4.3/bin/python
+
+     - name: Install Python 2.7.10
+       command: ~/.pyenv/bin/pyenv install 2.7.10 creates=~/.pyenv/versions/2.7.10/bin/python
+
+     - name: Install global requirements for 2.7.10
+       shell: ~/.pyenv/versions/2.7.10/bin/pip install -U -r ~/global_requirements.txt
+
+     - name: Install global requirements for 3.4.3
+       shell: ~/.pyenv/versions/3.4.3/bin/pip install -U -r ~/global_requirements.txt
+
+     - name: Install Leiningen
+       get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein dest=~/bin/lein mode=755

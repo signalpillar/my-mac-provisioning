@@ -1,0 +1,65 @@
+---
+
+downloads: ~/.ansible-downloads/
+
+dotfiles_repo: https://github.com/signalpillar/dotfiles.git
+dotfiles_repo_local_destination: ~/proj/dotfiles
+dotfiles_files:
+   - .gitconfig
+   - .gitignore
+   - .spacemacs
+   - .tmux.conf
+   - .zshrc
+   - bin/ec
+   - bin/open_md
+   - functions.sh
+   - global_requirements.txt
+
+# variables for the role: geerlingguy.homebrew
+homebrew_cask_appdir: /Applications
+homebrew_installed_packages:
+   - ansible
+   - boot2docker
+   - caskroom/cask/brew-cask
+   - cmake
+   - cowsay
+   - ctags
+   - direnv
+   - docker
+   - emacs
+   - git
+   - icdiff
+   - jq
+   - mosh
+   - npm
+   - openssl
+   - readline
+   - reattach-to-user-namespace
+   - the_silver_searcher
+   - tmux
+   - wget
+   - z
+
+homebrew_taps:
+   - caskroom/cask
+
+homebrew_cask_apps:
+   - bartender
+   - dropbox
+   - evernote
+   - fing
+   - firefox
+   - google-chrome
+   - iterm2
+   - java
+   - karabiner 
+   - kindle
+   # capture part of the screen and save as GIF
+   - licecap
+   - menumeters
+   - skype
+   - sourcetree
+   - sublime-text
+   - vagrant
+   - virtualbox
+   - vlc
