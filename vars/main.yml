@@ -39,6 +39,7 @@ homebrew_installed_packages:
    - the_silver_searcher
    - tmux
    - wget
+   - youtube-dl
    - z
 
 homebrew_taps:
