@@ -62,3 +62,12 @@
 
      - name: Install Leiningen
        get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein dest=~/bin/lein mode=755
+     # --------------------- GO tools
+     - name: Install gocode
+       command: go get -u -v github.com/nsf/gocode
+
+     - name: Install godef
+       command: go get -u -v github.com/rogpeppe/godef
+
+     - name: Install go-oracle
+       command: go get -u -v golang.org/x/tools/cmd/oracle
