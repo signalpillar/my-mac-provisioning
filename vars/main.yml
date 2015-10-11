@@ -39,7 +39,7 @@ homebrew_installed_packages:
    - jq
    - mc
    - mosh
-   - ngrock
+   - ngrok
    - npm
    - openssl
    - readline
