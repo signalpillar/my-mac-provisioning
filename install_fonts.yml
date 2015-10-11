@@ -1,0 +1,12 @@
+- get_url: url=https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip dest="{{ downloads }}/fonts.zip"
+  register: new_archive
+- unarchive:
+    src="{{ downloads }}/fonts.zip"
+    dest="{{ downloads }}"
+    copy=no
+  when: new_archive
+- name: Install SourceCode Pro fonts
+  copy: src="{{ downloads }}/source-code-pro-2.010R-ro-1.030R-it/TTF/"
+    dest=~/Library/Fonts
+    directory_mode=yes
+  when: new_archive
