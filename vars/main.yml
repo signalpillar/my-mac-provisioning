@@ -16,6 +16,7 @@ dotfiles_files:
    - global_requirements.txt
 
 # variables for the role: geerlingguy.homebrew
+homebrew_upgrade_all_packages: yes
 homebrew_cask_appdir: /Applications
 homebrew_installed_packages:
    - ansible
