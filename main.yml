@@ -30,7 +30,7 @@
             dest={{ dotfiles_repo_local_destination }}
 
      - name: Link dotfiles
-       file: path=~/{{ item }} src={{ dotfiles_repo_local_destination }}/{{ item }} state=link
+       file: path={{ item.dst }} src={{ dotfiles_repo_local_destination }}/{{ item.src }} state=link
        with_items: "{{ dotfiles_files }}"
        
      - name: Install spacemacs

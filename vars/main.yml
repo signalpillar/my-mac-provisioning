@@ -5,15 +5,16 @@ downloads: ~/.ansible-downloads/
 dotfiles_repo: https://github.com/signalpillar/dotfiles.git
 dotfiles_repo_local_destination: ~/proj/dotfiles
 dotfiles_files:
-   - .gitconfig
-   - .gitignore
-   - .spacemacs
-   - .tmux.conf
-   - .zshrc
-   - bin/ec
-   - bin/open_md
-   - functions.sh
-   - global_requirements.txt
+   - {src: .gitconfig, dst: ~/.gitconfig}
+   - {src: .gitignore, dst: ~/.gitignore}
+   - {src: .spacemacs, dst: ~/.spacemacs}
+   - {src: .tmux.conf, dst: ~/.tmux.conf}
+   - {src: .zshrc, dst: ~/.zshrc}
+   - {src: bin/ec, dst: ~/bin/ec}
+   - {src: bin/open_md, dst: ~/bin/open_md}
+   - {src: functions.sh, dst: ~/functions.sh}
+   - {src: global_requirements.txt, dst: ~/global_requirements.txt}
+   - {src: iterm2/com.googlecode.iterm2.plist, dst: ~/Library/Preferences/com.googlecode.iterm2.plist}
 
 # variables for the role: geerlingguy.homebrew
 homebrew_upgrade_all_packages: yes
