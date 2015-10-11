@@ -47,6 +47,7 @@ homebrew_taps:
 
 homebrew_cask_apps:
    - bartender
+   - dash
    - dropbox
    - evernote
    - fing
