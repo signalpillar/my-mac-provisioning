@@ -27,16 +27,26 @@ homebrew_installed_packages:
    - direnv
    - docker
    - emacs
+   # PathPicker accepts a wide range of input — output from git commands, grep results,
+   # searches — pretty much anything.
+   - fpp
    - git
    - go
+   # HTTPie is a command line HTTP client, a user-friendly cURL replacement.
+   - httpie
    - icdiff
+   # jq is a lightweight and flexible command-line JSON processor
    - jq
+   - mc
    - mosh
+   - ngrock
    - npm
    - openssl
    - readline
    - reattach-to-user-namespace
    - the_silver_searcher
+   # Tig is an ncurses-based text-mode interface for git.
+   - tig
    - tmux
    - wget
    - youtube-dl
@@ -46,12 +56,16 @@ homebrew_taps:
    - caskroom/cask
 
 homebrew_cask_apps:
+   - appcleaner
    - bartender
+   - clipmenu
+   - daisydisk
    - dash
    - dropbox
    - evernote
    - fing
    - firefox
+   - flux
    - google-chrome
    - iterm2
    - java
