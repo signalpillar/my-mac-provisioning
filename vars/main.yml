@@ -61,8 +61,10 @@ homebrew_cask_apps:
    - licecap
    - menumeters
    - skype
+   - slack
    - sourcetree
    - sublime-text
    - vagrant
+   - viber
    - virtualbox
    - vlc
