@@ -15,6 +15,8 @@
        with_items:
           - ~/bin/
           - ~/proj
+          - ~/.lein
+          - ~/.tmux/plugins/
           - "{{ downloads }}"
 
      - name: Check oh-my-zsh installed
@@ -62,6 +64,11 @@
 
      - name: Install Leiningen
        get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein dest=~/bin/lein mode=755
+
+     - name: Install Tmux Plugin Manager
+       git: repo=https://github.com/tmux-plugins/tpm
+            dest=~/.tmux/plugins/tpm
+        
 
      # --------------------- GO tools
      - name: Install gocode

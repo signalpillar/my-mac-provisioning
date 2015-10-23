@@ -14,8 +14,7 @@ dotfiles_files:
    - {src: bin/open_md, dst: ~/bin/open_md}
    - {src: functions.sh, dst: ~/functions.sh}
    - {src: global_requirements.txt, dst: ~/global_requirements.txt}
-   # iTerm2 doesn't modify settings - it overrides them (symlink will be overriden by a  new file)
-   - {src: iterm2/com.googlecode.iterm2.plist, dst: ~/Library/Preferences/com.googlecode.iterm2.plist}
+   - {src: .lein/profiles.clj, dst: ~/.lein/profiles.clj}
 
 # variables for the role: geerlingguy.homebrew
 homebrew_upgrade_all_packages: yes
@@ -35,6 +34,7 @@ homebrew_installed_packages:
    - fpp
    - git
    - go
+   - htop
    # HTTPie is a command line HTTP client, a user-friendly cURL replacement.
    - httpie
    - icdiff
@@ -57,6 +57,7 @@ homebrew_installed_packages:
 
 homebrew_taps:
    - caskroom/cask
+   - homebrew/services
 
 homebrew_cask_apps:
    - appcleaner
@@ -80,7 +81,9 @@ homebrew_cask_apps:
    - skype
    - slack
    - sourcetree
+   - spotify
    - sublime-text
+   - telegram
    - vagrant
    - viber
    - virtualbox
