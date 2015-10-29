@@ -12,6 +12,7 @@ App Store applications
 There are still applications that should be installed from App Store
 
 - Twitter
+- Snail (Time and Task Manager)
 
 Safari Extensions
 -----------------

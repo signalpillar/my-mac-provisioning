@@ -44,6 +44,7 @@ homebrew_installed_packages:
    - mosh
    - ngrok
    - npm
+   - ocaml
    - openssl
    - readline
    - reattach-to-user-namespace
@@ -78,6 +79,7 @@ homebrew_cask_apps:
    # capture part of the screen and save as GIF
    - licecap
    - menumeters
+   - packet-peeper
    - skype
    - slack
    - sourcetree
