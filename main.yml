@@ -56,6 +56,14 @@
      - name: Install Python 2.7.10
        command: ~/.pyenv/bin/pyenv install 2.7.10 creates=~/.pyenv/versions/2.7.10/bin/python
 
+     - name: Remove README file from python site-packages
+             # as it conflicts with `readme` library required by restview
+       file: path=~/.pyenv/versions/{{ item.name }}/lib/python{{ item.shortname }}/site-packages/README state=absent
+       with_items:
+          - {name: 2.7.10, shortname: 2.7}
+          - {name: 3.4.3,  shortname: 3.4}
+          - {name: 3.5.0,  shortname: 3.5}
+
      - name: Install global requirements for 2.7.10
        shell: ~/.pyenv/versions/2.7.10/bin/pip install -U -r ~/global_requirements.txt
 
