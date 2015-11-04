@@ -71,6 +71,7 @@ homebrew_cask_apps:
    - evernote
    - fing
    - firefox
+   - fluid
    - flux
    - google-chrome
    - iterm2
