@@ -34,6 +34,7 @@ homebrew_installed_packages:
    - fpp
    - git
    - go
+   - gpg
    - htop
    # HTTPie is a command line HTTP client, a user-friendly cURL replacement.
    - httpie
