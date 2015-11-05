@@ -28,6 +28,8 @@ homebrew_installed_packages:
    - ctags
    - direnv
    - docker
+   - docker-machine
+   # TODO: Add the following options to get .app file `--with-cocoa --srgb`
    - emacs
    # PathPicker accepts a wide range of input — output from git commands, grep results,
    # searches — pretty much anything.
