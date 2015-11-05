@@ -1,0 +1,28 @@
+- name: Install devpi server
+  pip: name=devpi-server
+    executable=pip
+    extra_args="-U --isolated"
+
+- name: Get devpi-server executable
+  command: pyenv which devpi-server
+  register: devpi_server
+
+- name: Generate DevPi server configuration
+  command: "{{ devpi_server.stdout }} --serverdir ~/.devpi/server --gen-config"
+  args:
+      chdir: ~/.devpi
+      creates: ~/.devpi/gen-config/net.devpi.plist
+
+- name: Ensure ~/Library/LaunchAgents exists, to set DevPi as a service
+  file: path=~/Library/LaunchAgents state=directory
+
+- name: Link DevPi service file
+  file: src=~/.devpi/gen-config/net.devpi.plist
+        dest=~/Library/LaunchAgents/net.devpi.plist
+        state=link
+
+- name: Load DevPi service
+  command: launchctl load ~/Library/LaunchAgents/net.devpi.plist
+
+- name: Start DevPi service
+  command: launchctl start net.devpi

@@ -16,6 +16,8 @@
           - ~/bin/
           - ~/proj
           - ~/.lein
+          - ~/.devpi
+          - ~/.pip
           - ~/.tmux/plugins/
           - "{{ downloads }}"
 
@@ -65,10 +67,10 @@
           - {name: 3.5.0,  shortname: 3.5}
 
      - name: Install global requirements for 2.7.10
-       shell: ~/.pyenv/versions/2.7.10/bin/pip install -U -r ~/global_requirements.txt
+       shell: ~/.pyenv/versions/2.7.10/bin/pip --isolated install -U -r ~/global_requirements.txt
 
      - name: Install global requirements for 3.4.3
-       shell: ~/.pyenv/versions/3.4.3/bin/pip install -U -r ~/global_requirements.txt
+       shell: ~/.pyenv/versions/3.4.3/bin/pip --isolated install -U -r ~/global_requirements.txt
 
      - name: Install Leiningen
        get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein dest=~/bin/lein mode=755
@@ -76,7 +78,11 @@
      - name: Install Tmux Plugin Manager
        git: repo=https://github.com/tmux-plugins/tpm
             dest=~/.tmux/plugins/tpm
-        
+
+     - name: Set global Python version (2.7.10)
+       command: pyenv global 2.7.10
+
+     - include: tasks/devpi.yml
 
      # --------------------- GO tools
      - name: Install gocode

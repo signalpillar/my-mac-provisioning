@@ -15,6 +15,8 @@ dotfiles_files:
    - {src: functions.sh, dst: ~/functions.sh}
    - {src: global_requirements.txt, dst: ~/global_requirements.txt}
    - {src: .lein/profiles.clj, dst: ~/.lein/profiles.clj}
+   - {src: .pip/pip.conf, dst: ~/.pip/pip.conf}
+   - {src: .pydistutils.cfg, dst: ~/.pydistutils.cfg}
 
 # variables for the role: geerlingguy.homebrew
 homebrew_upgrade_all_packages: yes
