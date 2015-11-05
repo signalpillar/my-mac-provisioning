@@ -47,6 +47,7 @@ homebrew_installed_packages:
    - jq
    - mc
    - mosh
+   - mplayer
    - ngrok
    - npm
    - ocaml
