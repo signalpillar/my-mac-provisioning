@@ -41,37 +41,6 @@
        git: repo=https://github.com/syl20bnr/spacemacs
             dest=~/.emacs.d
 
-     - name: Install pyenv
-       shell: curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-       args:
-        creates: ~/.pyenv/bin/pyenv
-
-     - name: Add pyenv to Path
-       lineinfile: dest=~/.zshrc regexp='\$HOME/.pyenv/bin' line='export PATH="$HOME/.pyenv/bin:$PATH"'
-
-     - name: Install Python 3.5
-       command: ~/.pyenv/bin/pyenv install 3.5.0 creates=~/.pyenv/versions/3.5.0/bin/python
-
-     - name: Install Python 3.4.3
-       command: ~/.pyenv/bin/pyenv install 3.4.3 creates=~/.pyenv/versions/3.4.3/bin/python
-
-     - name: Install Python 2.7.10
-       command: ~/.pyenv/bin/pyenv install 2.7.10 creates=~/.pyenv/versions/2.7.10/bin/python
-
-     - name: Remove README file from python site-packages
-             # as it conflicts with `readme` library required by restview
-       file: path=~/.pyenv/versions/{{ item.name }}/lib/python{{ item.shortname }}/site-packages/README state=absent
-       with_items:
-          - {name: 2.7.10, shortname: 2.7}
-          - {name: 3.4.3,  shortname: 3.4}
-          - {name: 3.5.0,  shortname: 3.5}
-
-     - name: Install global requirements for 2.7.10
-       shell: ~/.pyenv/versions/2.7.10/bin/pip --isolated install -U -r ~/global_requirements.txt
-
-     - name: Install global requirements for 3.4.3
-       shell: ~/.pyenv/versions/3.4.3/bin/pip --isolated install -U -r ~/global_requirements.txt
-
      - name: Install Leiningen
        get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein dest=~/bin/lein mode=755
 
@@ -79,20 +48,7 @@
        git: repo=https://github.com/tmux-plugins/tpm
             dest=~/.tmux/plugins/tpm
 
-     - name: Set global Python version (2.7.10)
-       command: pyenv global 2.7.10
-
+     - include: tasks/python.yml
      - include: tasks/devpi.yml
-
-     # --------------------- GO tools
-     - name: Install gocode
-       command: go get -u -v github.com/nsf/gocode
-
-     - name: Install godef
-       command: go get -u -v github.com/rogpeppe/godef
-
-     - name: Install go-oracle
-       command: go get -u -v golang.org/x/tools/cmd/oracle
-
-     # --------------------- Fonts
-     - include: install_fonts.yml
+     - include: tasks/go.yml
+     - include: tasks/install_fonts.yml
