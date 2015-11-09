@@ -60,6 +60,7 @@ homebrew_installed_packages:
    # Tig is an ncurses-based text-mode interface for git.
    - tig
    - tmux
+   - watch
    - wget
    - youtube-dl
    - z
