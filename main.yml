@@ -48,6 +48,15 @@
        git: repo=https://github.com/tmux-plugins/tpm
             dest=~/.tmux/plugins/tpm
 
+     - name: Initialize the state of OPAM (OCaml pacakge manager)
+       command: opam init creates=~/.opam
+     - name: Install OCaml packages
+       command: opam install --build-doc --strict --quiet --yes {{ item }}
+       with_items:
+         - merlin
+         - utop
+         - ocp-indent
+
      - include: tasks/python.yml
      - include: tasks/devpi.yml
      - include: tasks/go.yml
