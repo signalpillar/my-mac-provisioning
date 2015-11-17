@@ -54,6 +54,7 @@ homebrew_installed_packages:
    # OCaml package manager
    - opam
    - openssl
+   - otto
    - readline
    - reattach-to-user-namespace
    - the_silver_searcher
