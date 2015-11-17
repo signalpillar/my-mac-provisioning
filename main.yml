@@ -37,6 +37,9 @@
        file: path={{ item.dst }} src={{ dotfiles_repo_local_destination }}/{{ item.src }} state=link
        with_items: "{{ dotfiles_files }}"
        
+     - name: Link Emacs application
+       command: brew linkapps emacs creates=/Applications/Emacs.app
+
      - name: Install spacemacs
        git: repo=https://github.com/syl20bnr/spacemacs
             dest=~/.emacs.d
