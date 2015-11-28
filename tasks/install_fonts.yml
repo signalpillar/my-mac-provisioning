@@ -10,3 +10,17 @@
     dest=~/Library/Fonts
     directory_mode=yes
   when: new_archive
+
+- get_url: url=https://github.com/chrissimpkins/Hack/releases/download/v2.018/Hack-v2_018-ttf.zip dest="{{ downloads }}/hackfonts.zip"
+  register: new_archive
+- file: path="{{ downloads }}/hackfonts" state=directory
+- unarchive:
+    src="{{ downloads }}/hackfonts.zip"
+    dest="{{ downloads }}/hackfonts"
+    copy=no
+  when: new_archive
+- name: Install Hack font
+  copy: src="{{ downloads }}/hackfonts/"
+    dest=~/Library/Fonts
+    directory_mode=yes
+  when: new_archive
