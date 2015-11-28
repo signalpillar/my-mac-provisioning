@@ -68,6 +68,7 @@ homebrew_installed_packages:
 
 homebrew_taps:
    - caskroom/cask
+   - caskroom/versions
    - homebrew/services
 
 homebrew_cask_apps:
@@ -96,7 +97,7 @@ homebrew_cask_apps:
    - slack
    - sourcetree
    - spotify
-   - sublime-text
+   - caskroom/versions/sublime-text3
    - telegram
    - typora
    - vagrant
