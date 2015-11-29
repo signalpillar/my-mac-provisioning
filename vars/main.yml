@@ -74,6 +74,7 @@ homebrew_taps:
 homebrew_cask_apps:
    - appcleaner
    - bartender
+   - Caskroom/cask/calibre
    - clipmenu
    - daisydisk
    - dash
