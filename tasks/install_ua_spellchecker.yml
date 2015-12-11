@@ -1,0 +1,25 @@
+# This task downloads Ukrainian dictionaries/spell check, created for OpenOffice
+# - http://extensions.services.openoffice.org/en/project/ukrainian-dictionary
+# - unpacks *.dic and *.aff files to the system /Library/Spelling as per user (~/Library/Spelling) it doesn't work
+
+# Part that should be done manually: Preferences -> Keyboard -> Text -> Spelling [box] -> Set up -> Ensure Ukrainian is checked and in correct position.
+
+
+- get_url: url="https://doc-00-0c-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/km9jje5re7l0a3tri35iq5n3055cvv94/1449828000000/09643801237945925469/*/0By5eLVZEO97ub1lsSm41RV9RQ2c?e=download" dest="{{ downloads }}/ua_dictionary.zip"
+  register: new_archive
+- unarchive:
+    src="{{ downloads }}/ua_dictionary.zip"
+    dest="{{ downloads }}"
+    copy=no
+  when: new_archive
+
+- name: Create /Library/Spelling if missing. 
+  file: path=/Library/Spelling state=directory mode=0755
+  become: yes
+
+- name: Install Ukrainian dictionaries and spell check files
+  copy: src="{{ downloads }}/uk_UA/{{ item }}" dest=/Library/Spelling
+  with_items:
+    - uk_UA.dic
+    - uk_UA.aff
+  become: yes
