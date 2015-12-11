@@ -14,6 +14,7 @@ dotfiles_files:
    - {src: bin/open_md, dst: ~/bin/open_md}
    - {src: functions.sh, dst: ~/functions.sh}
    - {src: global_requirements.txt, dst: ~/global_requirements.txt}
+   - {src: global_requirements2.7.txt, dst: ~/global_requirements2.7.txt}
    - {src: .lein/profiles.clj, dst: ~/.lein/profiles.clj}
    - {src: .pip/pip.conf, dst: ~/.pip/pip.conf}
    - {src: .pydistutils.cfg, dst: ~/.pydistutils.cfg}
@@ -74,6 +75,7 @@ homebrew_taps:
 homebrew_cask_apps:
    - appcleaner
    - bartender
+   - Caskroom/cask/bittorrent
    - Caskroom/cask/calibre
    - clipmenu
    - daisydisk

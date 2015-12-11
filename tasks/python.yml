@@ -26,6 +26,9 @@
 - name: Install global requirements for 2.7.10
   shell: ~/.pyenv/versions/2.7.10/bin/pip --isolated install -U -r ~/global_requirements.txt
 
+- name: Install 2.7 specific requirements
+  shell: ~/.pyenv/versions/2.7.10/bin/pip --isolated install -U -r ~/global_requirements2.7.txt
+
 - name: Install global requirements for 3.4.3
   shell: ~/.pyenv/versions/3.4.3/bin/pip --isolated install -U -r ~/global_requirements.txt
 
