@@ -32,6 +32,7 @@ homebrew_installed_packages:
    - direnv
    - docker
    - docker-machine
+   - dockviz
    # TODO: Add the following options to get .app file `--with-cocoa --srgb`
    - emacs
    # PathPicker accepts a wide range of input — output from git commands, grep results,
@@ -44,9 +45,11 @@ homebrew_installed_packages:
    # HTTPie is a command line HTTP client, a user-friendly cURL replacement.
    - httpie
    - icdiff
+   - ispell
    # jq is a lightweight and flexible command-line JSON processor
    - jq
    - mc
+   - mercurial
    - mosh
    - mplayer
    - ngrok
