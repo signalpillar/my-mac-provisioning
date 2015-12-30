@@ -53,7 +53,6 @@ homebrew_installed_packages:
    - mosh
    - mplayer
    - ngrok
-   - npm
    - ocaml
    # OCaml package manager
    - opam
@@ -78,8 +77,8 @@ homebrew_taps:
 homebrew_cask_apps:
    - appcleaner
    - bartender
-   - Caskroom/cask/bittorrent
-   - Caskroom/cask/calibre
+   - bittorrent
+   - calibre
    - clipmenu
    - daisydisk
    - dash
@@ -103,7 +102,7 @@ homebrew_cask_apps:
    - slack
    - sourcetree
    - spotify
-   - caskroom/versions/sublime-text3
+   - sublime-text3
    - telegram
    - typora
    - vagrant

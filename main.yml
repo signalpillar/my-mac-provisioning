@@ -4,8 +4,6 @@
 
   vars_files:
      - vars/main.yml
-  roles:
-     - { role: geerlingguy.homebrew }
 
   tasks:
 
@@ -65,3 +63,4 @@
      - include: tasks/go.yml
      - include: tasks/install_fonts.yml
      - include: tasks/install_ua_spellchecker.yml
+     - include: tasks/homebrew.yml

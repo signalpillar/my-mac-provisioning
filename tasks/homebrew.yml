@@ -1,0 +1,17 @@
+- name: Upgrade homebrew itself
+  homebrew: update_homebrew=yes
+
+- name: Ensure configured taps are tapped.
+  homebrew_tap: tap={{ item }}
+  with_items: "{{ homebrew_taps }}"
+
+- name: Ensure configured homebrew packages are installed.
+  homebrew: name={{ item }}
+  with_items: "{{ homebrew_installed_packages }}"
+
+- name: Install configured cask applications.
+  homebrew_cask: name={{ item }}
+  with_items: "{{ homebrew_cask_apps }}"
+
+- name: Upgrade all homebrew packages
+  homebrew: upgrade_all=yes
