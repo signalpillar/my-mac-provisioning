@@ -75,6 +75,7 @@ homebrew_taps:
    - homebrew/services
 
 homebrew_cask_apps:
+   - alfred
    - appcleaner
    - bartender
    - bittorrent
