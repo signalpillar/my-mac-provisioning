@@ -106,6 +106,7 @@ homebrew_cask_apps:
    - spotify
    - sublime-text3
    - telegram
+   - twitterrific
    - typora
    - vagrant
    - viber
