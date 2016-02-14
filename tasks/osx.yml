@@ -1,0 +1,3 @@
+# http://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
+- name: Change initial key repeat value in OSX
+  command: defaults write -g InitialKeyRepeat -int 10

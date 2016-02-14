@@ -59,6 +59,7 @@
          - ocp-indent
 
      - include: tasks/python.yml
+     - include: tasks/osx.yml
      - include: tasks/devpi.yml
      - include: tasks/go.yml
      - include: tasks/install_fonts.yml
