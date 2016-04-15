@@ -59,7 +59,6 @@
 
      - include: tasks/python.yml
      - include: tasks/osx.yml
-     - include: tasks/go.yml
      - include: tasks/install_fonts.yml
      - include: tasks/install_ua_spellchecker.yml
      - include: tasks/homebrew.yml
