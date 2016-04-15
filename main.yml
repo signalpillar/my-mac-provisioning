@@ -14,7 +14,6 @@
           - ~/bin/
           - ~/proj
           - ~/.lein
-          - ~/.devpi
           - ~/.pip
           - ~/.tmux/plugins/
           - "{{ downloads }}"
