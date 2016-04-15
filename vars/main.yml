@@ -25,6 +25,8 @@ homebrew_cask_appdir: /Applications
 homebrew_installed_packages:
    - ansible
    - boot2docker
+   # emacs project management tooooool
+   - cask 
    - caskroom/cask/brew-cask
    - cmake
    - cowsay
