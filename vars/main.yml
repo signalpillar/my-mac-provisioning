@@ -49,6 +49,7 @@ homebrew_installed_packages:
    - ispell
    # jq is a lightweight and flexible command-line JSON processor
    - jq
+   - keybase
    - mc
    - mercurial
    - mosh
