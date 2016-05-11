@@ -64,7 +64,7 @@ homebrew_installed_packages:
    - reattach-to-user-namespace
    - the_silver_searcher
    # Tig is an ncurses-based text-mode interface for git.
-   - tig
+   # - tig
    - tmux
    - watch
    - wget
@@ -87,14 +87,14 @@ homebrew_cask_apps:
    - dash
    - dropbox
    - evernote
-   - fing
+   # - fing
    - firefox
-   - fluid
+   # - fluid
    - flux
    - gitter
    - google-drive
    - google-chrome
-   - iterm2
+   # - iterm2
    - java
    - karabiner 
    - kindle
@@ -108,8 +108,8 @@ homebrew_cask_apps:
    - spotify
    - sublime-text3
    - telegram
-   - twitterrific
-   - typora
+   # - twitterrific
+   # - typora  # markdown editor
    - vagrant
    - viber
    - virtualbox
