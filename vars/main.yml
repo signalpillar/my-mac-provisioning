@@ -24,16 +24,20 @@ homebrew_upgrade_all_packages: yes
 homebrew_cask_appdir: /Applications
 homebrew_installed_packages:
    - ansible
-   - boot2docker
+   - Caskroom/cask/dockertoolbox
+
    # emacs project management tooooool
    - cask 
-   - caskroom/cask/brew-cask
    - cmake
+
+   # https://github.com/TheNewNormal/corectl
+   # CoreOS over OS X made very simple
+   - corectl
+
    - cowsay
    - ctags
    - direnv
    - docker
-   - docker-machine
    - dockviz
    # TODO: Add the following options to get .app file `--with-cocoa --srgb`
    - emacs
@@ -94,7 +98,7 @@ homebrew_cask_apps:
    - gitter
    - google-drive
    - google-chrome
-   # - iterm2
+   - iterm2
    - java
    - karabiner 
    - kindle
@@ -110,7 +114,10 @@ homebrew_cask_apps:
    - telegram
    # - twitterrific
    # - typora  # markdown editor
+
+   # just to play with
+   - terraform
+
    - vagrant
    - viber
-   - virtualbox
    - vlc
