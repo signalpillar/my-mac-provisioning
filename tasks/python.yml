@@ -26,13 +26,13 @@
     - 3.5.0
 
 - name: Install global requirements for 2.7.10
-  shell: ~/.pyenv/versions/2.7.10/bin/pip --isolated install -U -r ~/global_requirements.txt
+  shell: pip --isolated install -U -r ~/global_requirements.txt
 
 - name: Install 2.7 specific requirements
-  shell: ~/.pyenv/versions/2.7.10/bin/pip --isolated install -U -r ~/global_requirements2.7.txt
+  shell: pip --isolated install -U -r ~/global_requirements2.7.txt
 
-- name: Install global requirements for 3.4.3
-  shell: ~/.pyenv/versions/3.4.3/bin/pip --isolated install -U -r ~/global_requirements.txt
+- name: Install global requirements for 3.5.0
+  shell: ~/.pyenv/versions/3.5.0/bin/pip --isolated install -U -r ~/global_requirements.txt
 
 - name: Set global Python version (2.7.10)
   command: pyenv global 2.7.10
