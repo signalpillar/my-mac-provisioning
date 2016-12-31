@@ -57,6 +57,7 @@
          - utop
          - ocp-indent
 
+     - include: tasks/vim.yml
      - include: tasks/python.yml
      - include: tasks/osx.yml
      # - include: tasks/install_fonts.yml
