@@ -13,5 +13,6 @@
   homebrew_cask: name={{ item }}
   with_items: "{{ homebrew_cask_apps }}"
 
-- name: Upgrade all homebrew packages
-  homebrew: upgrade_all=yes
+# - FIXME: Fails on linking at the moment
+# - name: Upgrade all homebrew packages
+#   homebrew: upgrade_all=yes

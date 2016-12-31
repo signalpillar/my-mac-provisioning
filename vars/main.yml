@@ -24,7 +24,6 @@ homebrew_upgrade_all_packages: yes
 homebrew_cask_appdir: /Applications
 homebrew_installed_packages:
    - ansible
-   - Caskroom/cask/dockertoolbox
 
    # emacs project management tooooool
    - cask 
@@ -37,9 +36,8 @@ homebrew_installed_packages:
    - cowsay
    - ctags
    - direnv
-   - docker
+   # - docker - no need as we have dockertoolbox installed
    - dockviz
-   # TODO: Add the following options to get .app file `--with-cocoa --srgb`
    - emacs
    # PathPicker accepts a wide range of input — output from git commands, grep results,
    # searches — pretty much anything.
@@ -58,7 +56,6 @@ homebrew_installed_packages:
    - mercurial
    - mosh
    - mplayer
-   - ngrok
    - ocaml
    # OCaml package manager
    - opam
@@ -89,6 +86,7 @@ homebrew_cask_apps:
    - clipmenu
    - daisydisk
    - dash
+   - docker-toolbox
    - dropbox
    - evernote
    # - fing
@@ -102,21 +100,18 @@ homebrew_cask_apps:
    - java
    - karabiner 
    - kindle
+   - ngrok
    # capture part of the screen and save as GIF
    - licecap
-   - menumeters
    - packet-peeper
    - skype
    - slack
    - sourcetree
    - spotify
-   - sublime-text3
+   # - sublime-text3
    - telegram
    # - twitterrific
    # - typora  # markdown editor
-
-   # just to play with
-   - terraform
 
    - vagrant
    - viber
