@@ -10,6 +10,7 @@ dotfiles_files:
    - {src: .spacemacs, dst: ~/.spacemacs}
    - {src: .tmux.conf, dst: ~/.tmux.conf}
    - {src: .zshrc, dst: ~/.zshrc}
+   - {src: .vimrc, dst: ~/.vimrc}
    - {src: bin/ec, dst: ~/bin/ec}
    - {src: bin/open_md, dst: ~/bin/open_md}
    - {src: functions.sh, dst: ~/functions.sh}
