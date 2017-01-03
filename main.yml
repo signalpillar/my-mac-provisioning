@@ -17,6 +17,9 @@
           - ~/.pip
           - ~/.tmux/plugins/
           - "{{ downloads }}"
+       tags:
+            - always
+            - dotfiles
 
      - name: Check oh-my-zsh installed
        stat: path=~/.oh-my-zsh
@@ -29,10 +32,16 @@
      - name: Clone dotfiles
        git: repo={{ dotfiles_repo }}
             dest={{ dotfiles_repo_local_destination }}
+       tags:
+            - always
+            - dotfiles
 
      - name: Link dotfiles
        file: path={{ item.dst }} src={{ dotfiles_repo_local_destination }}/{{ item.src }} state=link
        with_items: "{{ dotfiles_files }}"
+       tags:
+            - always
+            - dotfiles
        
      - name: Link Emacs application
        command: brew linkapps emacs creates=/Applications/Emacs.app
@@ -59,6 +68,8 @@
 
      - include: tasks/vim.yml
      - include: tasks/python.yml
+       tags:
+           - python
      - include: tasks/osx.yml
      # - include: tasks/install_fonts.yml
      # - include: tasks/install_ua_spellchecker.yml
