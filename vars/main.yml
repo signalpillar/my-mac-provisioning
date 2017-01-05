@@ -57,11 +57,12 @@ homebrew_installed_packages:
    - mercurial
    - mosh
    - mplayer
+   - nmap
    - ocaml
    # OCaml package manager
    - opam
    - openssl
-   - otto
+   - pv
    - readline
    - reattach-to-user-namespace
    - the_silver_searcher
