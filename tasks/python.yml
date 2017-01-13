@@ -9,6 +9,9 @@
 - name: Install Python 3.5
   command: ~/.pyenv/bin/pyenv install 3.5.0 creates=~/.pyenv/versions/3.5.0/bin/python
 
+- name: Install Python 3.6
+  command: ~/.pyenv/bin/pyenv install 3.6.0 creates=~/.pyenv/versions/3.6.0/bin/python
+
 - name: Install Python 2.7.10
   command: ~/.pyenv/bin/pyenv install 2.7.10 creates=~/.pyenv/versions/2.7.10/bin/python
 
@@ -18,12 +21,14 @@
   with_items:
      - {name: 2.7.10, shortname: 2.7}
      - {name: 3.5.0,  shortname: 3.5}
+     - {name: 3.6.0,  shortname: 3.6}
 
 - name: Run pipstrap
   shell: ~/.pyenv/versions/{{item}}/bin/python {{ dotfiles_repo_local_destination }}/pipstrap/pipstrap.py
   with_items:
     - 2.7.10
     - 3.5.0
+    - 3.6.0
 
 - name: Install global requirements for 2.7.10
   shell: pip --isolated install -U -r ~/global_requirements.txt
@@ -33,6 +38,9 @@
 
 - name: Install global requirements for 3.5.0
   shell: ~/.pyenv/versions/3.5.0/bin/pip --isolated install -U -r ~/global_requirements.txt
+
+- name: Install global requirements for 3.6.0
+  shell: ~/.pyenv/versions/3.6.0/bin/pip --isolated install -U -r ~/global_requirements.txt
 
 - name: Set global Python version (2.7.10)
   command: pyenv global 2.7.10
