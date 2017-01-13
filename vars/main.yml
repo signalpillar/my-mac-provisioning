@@ -63,6 +63,7 @@ homebrew_installed_packages:
    - opam
    - openssl
    - pv
+   - pyenv
    - readline
    - reattach-to-user-namespace
    - the_silver_searcher

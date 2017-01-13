@@ -74,3 +74,6 @@
      # - include: tasks/install_fonts.yml
      # - include: tasks/install_ua_spellchecker.yml
      - include: tasks/homebrew.yml
+
+     - name: Update pyenv
+       command: pyenv update
