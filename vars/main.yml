@@ -77,6 +77,7 @@ homebrew_installed_packages:
 
 homebrew_taps:
    - caskroom/cask
+   - caskroom/fonts
    - caskroom/versions
    - homebrew/services
 
@@ -93,9 +94,12 @@ homebrew_cask_apps:
    - dropbox
    - evernote
    # - fing
+   - font-input
    - firefox
    # - fluid
    - flux
+   # another clipboard manager
+   - flycut
    - gitter
    - google-drive
    - google-chrome
