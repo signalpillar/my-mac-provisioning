@@ -25,6 +25,7 @@ homebrew_upgrade_all_packages: yes
 homebrew_cask_appdir: /Applications
 homebrew_installed_packages:
    - ansible
+   - bazel
 
    # emacs project management tooooool
    - cask 
@@ -39,6 +40,8 @@ homebrew_installed_packages:
    - direnv
    # - docker - no need as we have dockertoolbox installed
    - dockviz
+   # C++ template library for linear algebra (required by OpenVC)
+   - eigen
    - emacs
    # PathPicker accepts a wide range of input — output from git commands, grep results,
    # searches — pretty much anything.
@@ -50,9 +53,12 @@ homebrew_installed_packages:
    - httpie
    - icdiff
    - ispell
+   - jpeg
    # jq is a lightweight and flexible command-line JSON processor
    - jq
    - keybase
+   - libpng
+   - libtiff
    - mc
    - mercurial
    - mosh
@@ -62,10 +68,12 @@ homebrew_installed_packages:
    # OCaml package manager
    - opam
    - openssl
+   - openexr
    - pv
    - pyenv
    - readline
    - reattach-to-user-namespace
+   - tbb
    - the_silver_searcher
    # Tig is an ncurses-based text-mode interface for git.
    # - tig
