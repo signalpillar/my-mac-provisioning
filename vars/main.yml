@@ -56,7 +56,6 @@ homebrew_installed_packages:
    - jpeg
    # jq is a lightweight and flexible command-line JSON processor
    - jq
-   - keybase
    - libpng
    - libtiff
    - mc
@@ -113,7 +112,6 @@ homebrew_cask_apps:
    - google-chrome
    - iterm2
    - java
-   - karabiner 
    - kindle
    - ngrok
    # capture part of the screen and save as GIF
